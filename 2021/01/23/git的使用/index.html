@@ -6,17 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>git的使用 | 张锦杏的博客</title>
+  <title>git和github | 张锦杏的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="git的使用">
+  <meta name="description" content="git的介绍git是目前世界上最先进的分布式版本控制系统，可以实现代码版本控制 github的介绍github是一个面向开源及私有软件项目的托管平台">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git和github">
 <meta property="og:url" content="http://example.com/2021/01/23/git%E7%9A%84%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="张锦杏的博客">
+<meta property="og:description" content="git的介绍git是目前世界上最先进的分布式版本控制系统，可以实现代码版本控制 github的介绍github是一个面向开源及私有软件项目的托管平台">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://ftp.bmp.ovh/imgs/2021/01/072236d1da633e2b.jpg">
 <meta property="article:published_time" content="2021-01-23T08:21:30.000Z">
-<meta property="article:modified_time" content="2021-01-23T08:21:30.997Z">
+<meta property="article:modified_time" content="2021-01-23T09:46:34.259Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="git github">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ftp.bmp.ovh/imgs/2021/01/072236d1da633e2b.jpg">
   
     <link rel="alternative" href="/atom.xml" title="张锦杏的博客" type="application/atom+xml">
   
@@ -151,7 +156,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      git的使用
+      git和github
     </h1>
   
 
@@ -164,7 +169,84 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="git的介绍"><a href="#git的介绍" class="headerlink" title="git的介绍"></a>git的介绍</h2><p>git是目前世界上最先进的分布式版本控制系统，可以实现代码版本控制</p>
+<h2 id="github的介绍"><a href="#github的介绍" class="headerlink" title="github的介绍"></a>github的介绍</h2><p>github是一个面向开源及私有软件项目的托管平台</p>
+<a id="more"></a>
+<h2 id="git的命令行指令"><a href="#git的命令行指令" class="headerlink" title="git的命令行指令"></a>git的命令行指令</h2><table>
+<thead>
+<tr>
+<th align="center">指令说明</th>
+<th align="center">命令行指令</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">提交人id</td>
+<td align="center">git config –global user.name fuhua-ren</td>
+</tr>
+<tr>
+<td align="center">提交人邮箱</td>
+<td align="center">git config –global user.email <a href="mailto:&#x31;&#50;&#x30;&#x38;&#55;&#49;&#54;&#x32;&#55;&#48;&#64;&#113;&#x71;&#46;&#x63;&#x6f;&#109;">&#x31;&#50;&#x30;&#x38;&#55;&#49;&#54;&#x32;&#55;&#48;&#64;&#113;&#x71;&#46;&#x63;&#x6f;&#109;</a></td>
+</tr>
+<tr>
+<td align="center">初始化git仓库（就是在文件中生成</td>
+<td align="center">git init</td>
+</tr>
+<tr>
+<td align="center">查看被管理的文件</td>
+<td align="center">git status</td>
+</tr>
+<tr>
+<td align="center">添加管理文件</td>
+<td align="center">git add .</td>
+</tr>
+<tr>
+<td align="center">写提交说明</td>
+<td align="center">git commit -m 第一次提交</td>
+</tr>
+<tr>
+<td align="center">用暂存区的文件覆盖到工作目录文件</td>
+<td align="center">git checkout 文件</td>
+</tr>
+<tr>
+<td align="center">将文件从暂存区中删除</td>
+<td align="center">git rm –cached 文件</td>
+</tr>
+<tr>
+<td align="center">查看提交说明</td>
+<td align="center">git log</td>
+</tr>
+<tr>
+<td align="center">提交上传到github</td>
+<td align="center">git push <a target="_blank" rel="noopener" href="https://github.com/fuhua-ren/-mall.git">https://github.com/fuhua-ren/-mall.git</a> master</td>
+</tr>
+<tr>
+<td align="center">master表示主分支</td>
+<td align="center">\</td>
+</tr>
+<tr>
+<td align="center">推送远程仓库别名(添加一个文件的别名)</td>
+<td align="center">git remote add origin <a target="_blank" rel="noopener" href="https://github.com/fuhua-ren/-mall.git">https://github.com/fuhua-ren/-mall.git</a></td>
+</tr>
+<tr>
+<td align="center">使用别名上传到github</td>
+<td align="center">git push origin master</td>
+</tr>
+<tr>
+<td align="center">用-u将其设置为默认上传的文件</td>
+<td align="center">git push -u origin master</td>
+</tr>
+<tr>
+<td align="center">直接git push就可以上传github</td>
+<td align="center">git push</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">还有未列出</td>
+</tr>
+</tbody></table>
+<p>一般的使用<br>git add .<br>git commit -m 描述<br>git push</p>
+<p><img src="https://ftp.bmp.ovh/imgs/2021/01/072236d1da633e2b.jpg" alt="alt git指令"></p>
+
       
 
       
@@ -193,6 +275,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">git github</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -395,6 +488,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">微信小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">git github</a>
               </li>
             
             <div class="clearfix"></div>
