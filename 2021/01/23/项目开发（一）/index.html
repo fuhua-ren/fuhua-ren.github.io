@@ -8,18 +8,27 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>项目开发（一） | 张锦杏的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="vue开发移动商城项目主要开发移动商城的首页和购物车页面，利用vue全家桶实现代码逻辑。  通过vue-router进行页面路由跳转 对axios进行封装，并进行数据请求，根据接口提供的iid进行详情页数据请求 使用swiper组件对轮播图进行轮播切换">
+  <meta name="description" content="vue开发移动商城项目主要开发移动商城的首页和购物车页面，利用vue全家桶实现代码逻辑。  通过vue-router进行页面路由跳转 对axios进行封装，并进行数据请求，根据接口提供的iid进行详情页数据请求 使用swiper组件对轮播图进行轮播切换 利用vuex管理商品的增加、更改和删除状态">
 <meta property="og:type" content="article">
 <meta property="og:title" content="项目开发（一）">
 <meta property="og:url" content="http://example.com/2021/01/23/%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%EF%BC%88%E4%B8%80%EF%BC%89/index.html">
 <meta property="og:site_name" content="张锦杏的博客">
-<meta property="og:description" content="vue开发移动商城项目主要开发移动商城的首页和购物车页面，利用vue全家桶实现代码逻辑。  通过vue-router进行页面路由跳转 对axios进行封装，并进行数据请求，根据接口提供的iid进行详情页数据请求 使用swiper组件对轮播图进行轮播切换">
+<meta property="og:description" content="vue开发移动商城项目主要开发移动商城的首页和购物车页面，利用vue全家桶实现代码逻辑。  通过vue-router进行页面路由跳转 对axios进行封装，并进行数据请求，根据接口提供的iid进行详情页数据请求 使用swiper组件对轮播图进行轮播切换 利用vuex管理商品的增加、更改和删除状态">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://ftp.bmp.ovh/imgs/2021/01/eea5a9fce3c5c959.jpg">
+<meta property="og:image" content="https://ftp.bmp.ovh/imgs/2021/01/c887e984e9b75716.jpg">
+<meta property="og:image" content="https://ftp.bmp.ovh/imgs/2021/01/6d2470b0e1b209e8.jpg">
+<meta property="og:image" content="https://ftp.bmp.ovh/imgs/2021/01/2b2c4d81f3fdf9f5.jpg">
+<meta property="og:image" content="https://ftp.bmp.ovh/imgs/2021/01/d4508d29994d3c0f.jpg">
+<meta property="og:image" content="https://ftp.bmp.ovh/imgs/2021/01/f7be682547b565dd.jpg">
+<meta property="og:image" content="https://ftp.bmp.ovh/imgs/2021/01/30f56802457f9b5f.jpg">
+<meta property="og:image" content="https://ftp.bmp.ovh/imgs/2021/01/a99af1cb96543695.jpg">
 <meta property="article:published_time" content="2021-01-23T07:55:57.000Z">
-<meta property="article:modified_time" content="2021-01-23T08:14:49.816Z">
+<meta property="article:modified_time" content="2021-01-25T13:01:41.861Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="vue">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ftp.bmp.ovh/imgs/2021/01/eea5a9fce3c5c959.jpg">
   
     <link rel="alternative" href="/atom.xml" title="张锦杏的博客" type="application/atom+xml">
   
@@ -71,7 +80,7 @@
     			
             
     			
-    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">更多联系方式</a>
+    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">个人微信</a>
     			
             
 		</nav>
@@ -81,6 +90,8 @@
 					<a class="github" target="_blank" href="https://github.com/fuhua-ren" title="github"><i class="icon-github"></i></a>
 		        
 					<a class="qq" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=1208716270&site=qq&menu=yes" title="qq"><i class="icon-qq"></i></a>
+		        
+					<a class="weixin" target="_blank" href="https://ftp.bmp.ovh/imgs/2021/01/f202527490622af0.jpg" title="weixin"><i class="icon-weixin"></i></a>
 		        
 					<a class="mail" target="_blank" href="mailto:1208716270@qq.com" title="mail"><i class="icon-mail"></i></a>
 		        
@@ -120,6 +131,8 @@
 						<a class="github" target="_blank" href="https://github.com/fuhua-ren" title="github"><i class="icon-github"></i></a>
 			        
 						<a class="qq" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=1208716270&site=qq&menu=yes" title="qq"><i class="icon-qq"></i></a>
+			        
+						<a class="weixin" target="_blank" href="https://ftp.bmp.ovh/imgs/2021/01/f202527490622af0.jpg" title="weixin"><i class="icon-weixin"></i></a>
 			        
 						<a class="mail" target="_blank" href="mailto:1208716270@qq.com" title="mail"><i class="icon-mail"></i></a>
 			        
@@ -171,9 +184,29 @@
 <ol>
 <li>通过vue-router进行页面路由跳转</li>
 <li>对axios进行封装，并进行数据请求，根据接口提供的iid进行详情页数据请求</li>
-<li>使用swiper组件对轮播图进行轮播切换<a id="more"></a></li>
-</ol>
+<li>使用swiper组件对轮播图进行轮播切换</li>
+<li>利用vuex管理商品的增加、更改和删除状态<a id="more"></a>
 
+</li>
+</ol>
+<h2 id="项目展示"><a href="#项目展示" class="headerlink" title="项目展示"></a>项目展示</h2><p>完整项目源码: <a target="_blank" rel="noopener" href="https://github.com/fuhua-ren/-mall">https://github.com/fuhua-ren/-mall</a></p>
+<h3 id="项目首页"><a href="#项目首页" class="headerlink" title="项目首页"></a>项目首页</h3><center>
+    <img src="https://ftp.bmp.ovh/imgs/2021/01/eea5a9fce3c5c959.jpg">&nbsp;&nbsp;&nbsp;
+    <img src="https://ftp.bmp.ovh/imgs/2021/01/c887e984e9b75716.jpg">&nbsp;&nbsp;&nbsp;
+    <img src="https://ftp.bmp.ovh/imgs/2021/01/6d2470b0e1b209e8.jpg">
+</center>
+
+<p>　　首页主要由头部轮播图、热门分类、详情数据列表、回到顶部按钮和底部导航组成<br>    <em>思考</em></p>
+<h2 id="项目详情页"><a href="#项目详情页" class="headerlink" title="项目详情页"></a>项目详情页</h2><center>
+    <img src="https://ftp.bmp.ovh/imgs/2021/01/2b2c4d81f3fdf9f5.jpg">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <img src="https://ftp.bmp.ovh/imgs/2021/01/d4508d29994d3c0f.jpg"><br/><br/>
+    <img src="https://ftp.bmp.ovh/imgs/2021/01/f7be682547b565dd.jpg">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <img src="https://ftp.bmp.ovh/imgs/2021/01/30f56802457f9b5f.jpg">
+</center>
+
+<h2 id="项目购物车页面"><a href="#项目购物车页面" class="headerlink" title="项目购物车页面"></a>项目购物车页面</h2><center>
+    <img src="https://ftp.bmp.ovh/imgs/2021/01/a99af1cb96543695.jpg">
+</center>
       
 
       
@@ -385,7 +418,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
         
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">更多联系方式</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">个人微信</a></li>
       
         
     </ul>
@@ -473,7 +506,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">个人电话：15778397477&lt;br&gt;个人微信：zjx6363</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">&lt;br&gt;个人微信：zjx6363</div>
   	  	
     	</section>
     
