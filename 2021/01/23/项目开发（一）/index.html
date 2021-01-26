@@ -8,12 +8,12 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>项目开发（一） | 张锦杏的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="vue开发移动商城项目主要开发移动商城的首页和购物车页面，利用vue全家桶实现代码逻辑。  通过vue-router进行页面路由跳转 对axios进行封装，并进行数据请求，根据接口提供的iid进行详情页数据请求 使用swiper组件对轮播图进行轮播切换 利用vuex管理商品的增加、更改和删除状态">
+  <meta name="description" content="vue开发移动商城 此项目主要开发移动商城的首页和购物车页面。 通过vue-router进行页面路由跳转 对axios进行封装，并进行数据请求，根据接口提供的iid进行详情页数据请求 使用swiper组件对轮播图进行轮播切换 利用vuex管理商品的增加、更改和删除状态 整体利用better-scroll并对其进行封装，实现更好滑动体验效果 使用vue-lazyload框架实现，图片懒加载的效果">
 <meta property="og:type" content="article">
 <meta property="og:title" content="项目开发（一）">
 <meta property="og:url" content="http://example.com/2021/01/23/%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%EF%BC%88%E4%B8%80%EF%BC%89/index.html">
 <meta property="og:site_name" content="张锦杏的博客">
-<meta property="og:description" content="vue开发移动商城项目主要开发移动商城的首页和购物车页面，利用vue全家桶实现代码逻辑。  通过vue-router进行页面路由跳转 对axios进行封装，并进行数据请求，根据接口提供的iid进行详情页数据请求 使用swiper组件对轮播图进行轮播切换 利用vuex管理商品的增加、更改和删除状态">
+<meta property="og:description" content="vue开发移动商城 此项目主要开发移动商城的首页和购物车页面。 通过vue-router进行页面路由跳转 对axios进行封装，并进行数据请求，根据接口提供的iid进行详情页数据请求 使用swiper组件对轮播图进行轮播切换 利用vuex管理商品的增加、更改和删除状态 整体利用better-scroll并对其进行封装，实现更好滑动体验效果 使用vue-lazyload框架实现，图片懒加载的效果">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://ftp.bmp.ovh/imgs/2021/01/eea5a9fce3c5c959.jpg">
 <meta property="og:image" content="https://ftp.bmp.ovh/imgs/2021/01/c887e984e9b75716.jpg">
@@ -24,7 +24,7 @@
 <meta property="og:image" content="https://ftp.bmp.ovh/imgs/2021/01/30f56802457f9b5f.jpg">
 <meta property="og:image" content="https://ftp.bmp.ovh/imgs/2021/01/a99af1cb96543695.jpg">
 <meta property="article:published_time" content="2021-01-23T07:55:57.000Z">
-<meta property="article:modified_time" content="2021-01-25T13:01:41.861Z">
+<meta property="article:modified_time" content="2021-01-26T13:05:28.763Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="vue">
 <meta name="twitter:card" content="summary">
@@ -180,12 +180,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="vue开发移动商城"><a href="#vue开发移动商城" class="headerlink" title="vue开发移动商城"></a>vue开发移动商城</h2><p>项目主要开发移动商城的首页和购物车页面，利用vue全家桶实现代码逻辑。</p>
-<ol>
+        <h2 id="vue开发移动商城"><a href="#vue开发移动商城" class="headerlink" title="vue开发移动商城"></a>vue开发移动商城</h2><ol>
+<li>此项目主要开发移动商城的首页和购物车页面。</li>
 <li>通过vue-router进行页面路由跳转</li>
 <li>对axios进行封装，并进行数据请求，根据接口提供的iid进行详情页数据请求</li>
 <li>使用swiper组件对轮播图进行轮播切换</li>
-<li>利用vuex管理商品的增加、更改和删除状态<a id="more"></a>
+<li>利用vuex管理商品的增加、更改和删除状态</li>
+<li>整体利用better-scroll并对其进行封装，实现更好滑动体验效果</li>
+<li>使用vue-lazyload框架实现，图片懒加载的效果<a id="more"></a>
 
 </li>
 </ol>
@@ -195,15 +197,19 @@
     <img src="https://ftp.bmp.ovh/imgs/2021/01/c887e984e9b75716.jpg">&nbsp;&nbsp;&nbsp;
     <img src="https://ftp.bmp.ovh/imgs/2021/01/6d2470b0e1b209e8.jpg">
 </center>
+<center>首页主要由头部轮播图、热门分类、详情数据列表、回到顶部按钮和底部导航组成</center>
 
-<p>　　首页主要由头部轮播图、热门分类、详情数据列表、回到顶部按钮和底部导航组成<br>    <em>思考</em></p>
+<p>　　<br>    出现的bug：<br>        1. 问题描述：商品数据列表不能正常展示的问题<br>            &nbsp;&nbsp;&nbsp;&nbsp;问题分析： 网络加载过快而dom加载较慢<br>            &nbsp;&nbsp;&nbsp;&nbsp;解决方法：在请求商品列表数据时加入定时器，延时请求数据<br>        2. 问题描述：加载下一页时滚动卡顿<br>            &nbsp;&nbsp;&nbsp;&nbsp;问题分析： 加载的数据将页面内容撑大，better-scroll的内容区被撑开<br>            &nbsp;&nbsp;&nbsp;&nbsp;解决方法：在watch中监听图片信息的改变，重新计算图片的高度，解决滚动不顺畅的问题</p>
+<p>事件处理：<br>    &nbsp;&nbsp;&nbsp;&nbsp;1. 引入封装好的防抖函数，防止短时间内多次上拉加载频繁发出的网络请求<br>    &nbsp;&nbsp;&nbsp;&nbsp;2. 使用vue-lazyload框架实现，图片懒加载的效果<br>    &nbsp;&nbsp;&nbsp;&nbsp;3. better-scroll并对其进行封装，实现更好滑动体验效果</p>
 <h2 id="项目详情页"><a href="#项目详情页" class="headerlink" title="项目详情页"></a>项目详情页</h2><center>
     <img src="https://ftp.bmp.ovh/imgs/2021/01/2b2c4d81f3fdf9f5.jpg">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <img src="https://ftp.bmp.ovh/imgs/2021/01/d4508d29994d3c0f.jpg"><br/><br/>
     <img src="https://ftp.bmp.ovh/imgs/2021/01/f7be682547b565dd.jpg">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <img src="https://ftp.bmp.ovh/imgs/2021/01/30f56802457f9b5f.jpg">
 </center>
+<center>详情页由商品介绍区、商品参数区、评论区、推荐区和底部导航组成</center>
 
+<p>事件处理：<br>    如何将时间戳转成时间格式化字符串<br>    如：时间戳 ： 1535694719（秒）<br>    1. 将时间戳转换成Date对象<br>        &nbsp;&nbsp;&nbsp;&nbsp;Const data = new Date(1535694719*1000)<br>    2. 将Date进行格式化，转换成对应的字符串<br>        &nbsp;&nbsp;&nbsp;&nbsp;*date.getYear() + date.getMonth()+1<br>        &nbsp;&nbsp;&nbsp;&nbsp;Date -&gt; FormatString(常用方法)<br>        &nbsp;&nbsp;&nbsp;&nbsp;fmt.format(date,’yyyy-MM-dd hh:mm:ss’</p>
 <h2 id="项目购物车页面"><a href="#项目购物车页面" class="headerlink" title="项目购物车页面"></a>项目购物车页面</h2><center>
     <img src="https://ftp.bmp.ovh/imgs/2021/01/a99af1cb96543695.jpg">
 </center>
