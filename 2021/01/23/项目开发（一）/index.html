@@ -33,7 +33,7 @@
     <link rel="alternative" href="/atom.xml" title="张锦杏的博客" type="application/atom+xml">
   
   
-    <link rel="icon" href="/favicon.png">
+    <link rel="icon" href="/assets/img/pageIcon.png">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -80,7 +80,11 @@
     			
             
     			
-    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">个人微信</a>
+    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">项目开发</a>
+    			
+            
+    			
+    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">个人简介</a>
     			
             
 		</nav>
@@ -347,6 +351,19 @@
         </div>
         
         
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#vue%E5%BC%80%E5%8F%91%E7%A7%BB%E5%8A%A8%E5%95%86%E5%9F%8E"><span class="toc-number">1.</span> <span class="toc-text">vue开发移动商城</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA"><span class="toc-number">2.</span> <span class="toc-text">项目展示</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E9%A6%96%E9%A1%B5"><span class="toc-number">2.1.</span> <span class="toc-text">项目首页</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E8%AF%A6%E6%83%85%E9%A1%B5"><span class="toc-number">3.</span> <span class="toc-text">项目详情页</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E8%B4%AD%E7%89%A9%E8%BD%A6%E9%A1%B5%E9%9D%A2"><span class="toc-number">4.</span> <span class="toc-text">项目购物车页面</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
     </div>
 </aside>
 
@@ -414,17 +431,25 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
       
     
+      
+      
+      
+    
     
 
     <ul style="width: 70%">
     
     
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">个人微信</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">项目开发</a></li>
+      
+        
+      
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">个人简介</a></li>
       
         
     </ul>
@@ -516,11 +541,31 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
 
     
+    	<section class="tools-section tools-section-friends" q-show="friends">
+  		
+        <ul class="search-ul">
+          
+            <li class="search-li">
+              <a href="https://fuhua-ren.github.io/2021/01/23/%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%EF%BC%88%E4%B8%80%EF%BC%89/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>项目开发（一）</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="https://fuhua-ren.github.io/2021/01/23/%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%EF%BC%88%E4%BA%8C%EF%BC%89/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>项目开发（二）</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="https://fuhua-ren.github.io/2021/01/26/%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%EF%BC%88%E4%B8%89%EF%BC%89/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>项目开发（三）</a>
+            </li>
+          
+        </ul>
+  		
+    	</section>
+    
 
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">&lt;br&gt;个人微信：zjx6363</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">广西科技大学毕业生</div>
   	  	
     	</section>
     

@@ -27,7 +27,7 @@
     <link rel="alternative" href="/atom.xml" title="张锦杏的博客" type="application/atom+xml">
   
   
-    <link rel="icon" href="/favicon.png">
+    <link rel="icon" href="/assets/img/pageIcon.png">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -74,7 +74,11 @@
     			
             
     			
-    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">个人微信</a>
+    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">项目开发</a>
+    			
+            
+    			
+    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">个人简介</a>
     			
             
 		</nav>
@@ -390,6 +394,19 @@
         </div>
         
         
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#git%E7%9A%84%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">git的介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#github%E7%9A%84%E4%BB%8B%E7%BB%8D"><span class="toc-number">2.</span> <span class="toc-text">github的介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git%E7%9A%84%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%8C%87%E4%BB%A4"><span class="toc-number">3.</span> <span class="toc-text">git的命令行指令</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
     </div>
 </aside>
 
@@ -457,17 +474,25 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
       
     
+      
+      
+      
+    
     
 
     <ul style="width: 70%">
     
     
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">个人微信</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">项目开发</a></li>
+      
+        
+      
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">个人简介</a></li>
       
         
     </ul>
@@ -559,11 +584,31 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
 
     
+    	<section class="tools-section tools-section-friends" q-show="friends">
+  		
+        <ul class="search-ul">
+          
+            <li class="search-li">
+              <a href="https://fuhua-ren.github.io/2021/01/23/%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%EF%BC%88%E4%B8%80%EF%BC%89/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>项目开发（一）</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="https://fuhua-ren.github.io/2021/01/23/%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%EF%BC%88%E4%BA%8C%EF%BC%89/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>项目开发（二）</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="https://fuhua-ren.github.io/2021/01/26/%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%EF%BC%88%E4%B8%89%EF%BC%89/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>项目开发（三）</a>
+            </li>
+          
+        </ul>
+  		
+    	</section>
+    
 
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">&lt;br&gt;个人微信：zjx6363</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">广西科技大学毕业生</div>
   	  	
     	</section>
     
